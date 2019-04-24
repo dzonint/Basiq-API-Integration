@@ -113,7 +113,7 @@ func getAuth() (accessTokenData, error) {
 	accessTokenData := accessTokenData{}
 	json.Unmarshal(body, &accessTokenData)
 	if accessTokenData.AccessToken == "" {
-		return accessTokenData, errors.New("access token not found in body response - the error probably occured due to malformed request")
+		return accessTokenData, errors.New("access token not found in body response - the error probably occurred due to malformed request")
 	}
 
 	return accessTokenData, nil
@@ -162,7 +162,7 @@ func createUser(usr *user, accessToken *string) error {
 
 	json.Unmarshal([]byte(body), &usr)
 	if usr.Id == "" {
-		return errors.New("user id not found in body response - the error probably occured due to malformed request")
+		return errors.New("user id not found in body response - the error probably occurred due to malformed request")
 	}
 
 	return nil
